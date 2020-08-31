@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Questionnaires
+Route::get('/questionnaires/create', 'QuestionnaireController@create');          // Formulaire pour ajouter un formulaire
+Route::post('/questionnaires', 'QuestionnaireController@store');                 // Enregistre dans la DB
+Route::get('/questionnaires/{questionnaire}', 'QuestionnaireController@show');   // Affiche les infos sur le questionnaire{id}
