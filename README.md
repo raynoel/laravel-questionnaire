@@ -15,3 +15,11 @@ npm run dev
 
 # build for production with minification
 npm run build
+
+
+#########################
+* Classes avec nested relationship
+# Questionnaire contient  'title' + 'purpose' + 'user_id_
+# Question contient  'question' + 'questionnaire_id'
+# Answer contient  'answer' + 'question_id'
+* Chaque question contient un choix de 4 réponses

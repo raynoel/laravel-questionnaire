@@ -9,7 +9,7 @@
 
 
                 <div class="card-body">
-
+                    <a href="/questionnaires/{{ $questionnaire->id }}/questions/create" class="btn btn-dark">Ajoutez une question au questionnaire</a>
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@ class CreateQuestionnairesTable extends Migration
             $table->id();
             $table->string('title');                                            // Titre du questionnaire
             $table->string('purpose');                                          // Raison du questionnaire
-            $table->unsignedBigInteger('user_id');                              // Relation sera définie ailleur
+            $table->unsignedBigInteger('user_id');                              // Relation sera définie dans les models
             $table->timestamps();
         });
     }

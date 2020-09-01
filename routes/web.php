@@ -21,7 +21,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Questionnaires
+// Questionnaire controller
 Route::get('/questionnaires/create', 'QuestionnaireController@create');          // Formulaire pour ajouter un formulaire
 Route::post('/questionnaires', 'QuestionnaireController@store');                 // Enregistre dans la DB
 Route::get('/questionnaires/{questionnaire}', 'QuestionnaireController@show');   // Affiche les infos sur le questionnaire{id}
+
+// Question controller
+Route::get('/questionnaires/{questionnaire}/questions/create', 'QuestionController@create');   // Formulaire pour ajouter une question au questionnaire
+Route::post('/questionnaires/{questionnaire}/questions', 'QuestionController@store');           // Enregistre dans la DB
+
