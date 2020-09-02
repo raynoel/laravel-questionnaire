@@ -29,7 +29,7 @@ Route::get('/questionnaires/{questionnaire}', 'QuestionnaireController@show');  
 // Question controller
 Route::get('/questionnaires/{questionnaire}/questions/create', 'QuestionController@create');   // Formulaire pour ajouter une question au questionnaire
 Route::post('/questionnaires/{questionnaire}/questions', 'QuestionController@store');           // Enregistre dans la DB
-Route::delete('/questionnaires/{questionnaire}/questions/{question}', 'QuestionController@destroy'); // Supprime une question
+Route::delete('/questionnaires/{questionnaire}/questions/{question}', 'QuestionController@destroy'); // Supprime 1 question + ses choix de réponse
 
 // Survey controller
 Route::get('/surveys/{questionnaire}-{slug}', 'SurveyController@show');         // Affiche les questions + choix de réponse du sondage

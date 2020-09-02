@@ -32,11 +32,11 @@ class QuestionController extends Controller
 
 
 
-    // Supprime 1 question + ses réponses
-    public function destroy(Questionnaire $questionnaire, Question $question)  {  // Utilise "route model binding"
-      $question->answers()->delete();                                   // Supprime les réponses à la question
-      $question->delete();                                              // Supprime la question
-      return redirect('/questionnaires/' . $questionnaire->id);         // Retourne sur le questionnaire contenant les questions
+    // Supprime 1 question + ses choix de réponse
+    public function destroy(Questionnaire $questionnaire, Question $question)  {
+      $question->answers()->delete();                                     // Supprime les choix de réponses
+      $question->delete();                                                // Supprime la question
+      return redirect('/questionnaires/' . $questionnaire->id);           // Retourne sur le questionnaire contenant les questions
     }
 
 

@@ -33,7 +33,7 @@
 
             <!-- bouton supprimer la question -->
             <div class="card-footer">
-              <form action="/questionnaires/{{ $questionnaire->id }}/questions/{{ $question->id }}" method="post">
+              <form action="/questionnaires/{{ $questionnaire->id }}/questions/{{ $question->id }}" method="POST">
                 @method('DELETE')
                 @csrf
                 <button type="submit" class="btn btn-sm btn-outline-danger">Supprimer la question</button>
