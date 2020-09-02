@@ -16,13 +16,10 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        return view('home');
+
+    // Affiche tous les questionnaires appartenant au visiteur
+    public function index() {
+        $questionnaires = auth()->user()->questionnaires;
+        return view('home', compact('questionnaires'));
     }
 }
