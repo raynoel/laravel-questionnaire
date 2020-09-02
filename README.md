@@ -22,4 +22,7 @@ npm run build
 # Questionnaire contient  'title' + 'purpose' + 'user_id_
 # Question contient  'question' + 'questionnaire_id'
 # Answer contient  'answer' + 'question_id'
-* Chaque question contient un choix de 4 réponses
+* Chaque question contient un choix de 4 réponses 
+# Tables contenant les réponses au questionnaire
+# Survey contient 'nom' + 'courriel' + 'questionnaire_id'
+# SurveyResponse contient 'survey_id' + 'question_id' + 'response_id'

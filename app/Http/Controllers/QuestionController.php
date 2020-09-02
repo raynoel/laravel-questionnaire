@@ -28,7 +28,16 @@ class QuestionController extends Controller
       $question = $questionnaire->questions()->create($data['question']); // Dans l'obj questionnaire, exécute questions() qui lie l'obj question et y exécute create()
       $question->answers()->createMany($data['answers']);                 // Dans l'obj question, exécute answers() qui contient l'obj answer et y exécute create()
       return redirect('/questionnaires/' . $questionnaire->id);           // Load  la page /questionnaires/{id}
-  }
+    }
+
+
+
+    // Supprime 1 question + ses réponses
+    public function destroy(Questionnaire $questionnaire, Question $question)  {  // Utilise "route model binding"
+      $question->answers()->delete();                                   // Supprime les réponses à la question
+      $question->delete();                                              // Supprime la question
+      return redirect('/questionnaires/' . $questionnaire->id);         // Retourne sur le questionnaire contenant les questions
+    }
 
 
 

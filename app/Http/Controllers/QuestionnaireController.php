@@ -34,8 +34,10 @@ class QuestionnaireController extends Controller
     }
 
 
-    // Affiche les infos d'un questionnaire {id}
+    // Affiche 1 questionnaire{id}
     public function show(Questionnaire $questionnaire) {
+        $questionnaire->load('questions.answers');                                 // Lazyload les question appartenant au sondage + les choix de réponses appartenant au questions
+        // dd($questionnaire);
         return view('questionnaire.show', compact('questionnaire'));
     }
 

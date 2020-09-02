@@ -24,9 +24,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Questionnaire controller
 Route::get('/questionnaires/create', 'QuestionnaireController@create');          // Formulaire pour ajouter un formulaire
 Route::post('/questionnaires', 'QuestionnaireController@store');                 // Enregistre dans la DB
-Route::get('/questionnaires/{questionnaire}', 'QuestionnaireController@show');   // Affiche les infos sur le questionnaire{id}
+Route::get('/questionnaires/{questionnaire}', 'QuestionnaireController@show');   // Affiche 1 questionnaire{id}
 
 // Question controller
 Route::get('/questionnaires/{questionnaire}/questions/create', 'QuestionController@create');   // Formulaire pour ajouter une question au questionnaire
 Route::post('/questionnaires/{questionnaire}/questions', 'QuestionController@store');           // Enregistre dans la DB
+Route::delete('/questionnaires/{questionnaire}/questions/{question}', 'QuestionController@destroy'); // Supprime une question
 
+// Survey controller
+Route::get('/surveys/{questionnaire}-{slug}', 'SurveyController@show');         // Sondage
+Route::post('/surveys/{questionnaire}-{slug}', 'SurveyController@store');       // Enregistre le sondage dans la DB
