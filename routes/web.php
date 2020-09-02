@@ -32,5 +32,6 @@ Route::post('/questionnaires/{questionnaire}/questions', 'QuestionController@sto
 Route::delete('/questionnaires/{questionnaire}/questions/{question}', 'QuestionController@destroy'); // Supprime une question
 
 // Survey controller
-Route::get('/surveys/{questionnaire}-{slug}', 'SurveyController@show');         // Sondage
-Route::post('/surveys/{questionnaire}-{slug}', 'SurveyController@store');       // Enregistre le sondage dans la DB
+Route::get('/surveys/{questionnaire}-{slug}', 'SurveyController@show');         // Affiche les questions + choix de réponse du sondage
+Route::post('/surveys/{questionnaire}-{slug}', 'SurveyController@store');       // Enregistre le nom du participant + ses réponses dans la DB
+
