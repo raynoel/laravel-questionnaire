@@ -7,11 +7,22 @@ https://www.youtube.com/watch?v=_SyG3HMv48k
 https://www.youtube.com/watch?v=vmashFZ0RcI
 https://www.youtube.com/watch?v=278wLsBYn7U
 
-# install dependencies
+# installer les dépendances
 npm install
 
-# serve with hot reload at localhost:8080
+# démarrer le serveur local
 npm run dev
 
-# build for production with minification
+# construire pour la production avec minification
 npm run build
+
+
+#########################
+* Classes avec relations imbriquées
+# Questionnaire contient:                        'title' + 'purpose' + 'user_id_
+# Question appartenant à un questionnaire:       'question' + 'questionnaire_id'
+* Chaque question contient un choix de 4 réponses 
+# Answer appartenant à une question:             'answer' + 'question_id'
+* Sondage 
+# Survey contient:                               'nom' + 'courriel' + 'questionnaire_id'
+# SurveyResponse contient:                       'survey_id' + 'question_id' + 'response_id'
