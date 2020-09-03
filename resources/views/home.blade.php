@@ -24,9 +24,10 @@
                     <ul class="list-group">
                         @foreach($questionnaires as $questionnaire)
                             <li class="list-group-item">
+                                <small class="font-weight-bold mt-2">Editer le questionnaire</small><br>
                                 <a href="/questionnaires/{{ $questionnaire->id }}">{{ $questionnaire->title }}</a><br>
-                                <small class="font-weight-bold mt-2">Lien à partager</small><br>
-                                <a href="/surveys/{{ $questionnaire->id }}-{{ Str::slug($questionnaire->title) }}">{{ Str::slug($questionnaire->title) }}</a>
+                                <small class="font-weight-bold mt-2">URL à partager</small><br>
+                                <a href="/surveys/{{ $questionnaire->id }}-{{ Str::slug($questionnaire->title) }}">{{ $questionnaire->publicPath() }}</a>
                             </li>
                         @endforeach
                     </ul>
